@@ -8,31 +8,24 @@ MongoDB seamlessly integrates with Google Vertex AI Extensions, enabling users t
 
 Before you start, make sure you have:
 
-* **A Google Cloud Platform (GCP) Account**: Necessary to access Google Cloud services, including Vertex AI and Secrets Manager.
+* **A Google Cloud Platform (GCP) Account**: Necessary to access Google Cloud services, including Vertex AI and Secrets Manager. Following the link for [documentation](https://www.mongodb.com/docs/atlas/app-services/data-api/generated-endpoints/) setup.
 
-* **A MongoDB Atlas Account:** For hosting your MongoDB database. If you're new to MongoDB, sign up and create a cluster in MongoDB Atlas.
+* **A MongoDB Atlas Account:** For hosting your MongoDB database. If you're new to MongoDB, sign up and create a cluster in MongoDB Atlas following MongoDB's [documentation](https://www.mongodb.com/docs/guides/atlas/cluster/)
 
 * **Google Cloud SDK Installed:** For interacting with GCP services through the command line.
 
-* **Vertex AI Extensions enabled:** Signup for Extension Truster Tester program.
+* **Vertex AI Extensions enabled:** Signup for Extension Trusted Tester program following the [documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/extensions/overview)
 
 # **Step-by-Step Guide**
 
-1. **Set Up MongoDB**
-      * **Create a MongoDB Atlas Database**: Follow MongoDB's [documentation](https://www.mongodb.com/docs/guides/atlas/cluster/) to set up a new Atlas cluster. During the setup, choose cloud provider and region that best suits your application's needs.
-
-      * **Enable MongoDB Data API**: Navigate to the Atlas console, find the "Data API" section under "App Services", and enable the Data API. Configure permissions and note down the API URL and key. Follow the link for [documentation](https://www.mongodb.com/docs/atlas/app-services/data-api/generated-endpoints/)
+1. **Enable MongoDB Data API**: Navigate to the Atlas console, find the "Data API" section under "App Services", and enable the Data API. Configure permissions and note down the API URL and key. Follow the link for [documentation](https://www.mongodb.com/docs/atlas/app-services/data-api/generated-endpoints/)
 
 2. **Store MongoDB API Key in Google Secrets Manager**
       * **Create a Secret for Your API Key**: Go to the Google Cloud Console, navigate to Secrets Manager, and create a new secret. Store your MongoDB API key here for secure access. Follow the link for [documentation](https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets#:~:text=Go%20to%20the%20Secret%20Manager%20page%20in%20the%20Google%20Cloud%20console.&text=On%20the%20Secret%20Manager%20page,example%2C%20my%2Dsecret%20).
+
 3. **Prepare Your OpenAPI 3 Specification**
 
-      * **Develop API Specification:** Define the interactions between Google Vertex AI and your MongoDB using OpenAPI 3.0. This specification outlines how natural language queries will be translated into MongoDB operations.
-4. **Set Up Google Cloud Project**
-      * **Select or Create a GCP Project:** Use the Google Cloud Console or gcloud command-line tool to select or create a new project. This project will host your Vertex AI Extension and other GCP resources.Follow the link for [documentation](https://developers.google.com/workspace/guides/create-project)
-      * **Signup for Extension Trusted Tester program:** Follow the link for signing up to extension trusted tester program following the [documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/extensions/overview)
-
-
+      * **Develop API Specification:** Define the interactions between Google Vertex AI and your MongoDB using OpenAPI 3.0. This specification outlines how natural language queries will be translated into MongoDB operations.      
 
 # **Vertex Extensions SDK: Connecting Models to APIs**
 
