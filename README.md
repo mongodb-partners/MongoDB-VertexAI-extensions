@@ -8,7 +8,7 @@ MongoDB seamlessly integrates with Google Vertex AI Extensions, enabling users t
 
 Before you start, make sure you have:
 
-* **A Google Cloud Platform (GCP) Account**: Necessary to access Google Cloud services, including Vertex AI and Secrets Manager. Following the link for [documentation](https://www.mongodb.com/docs/atlas/app-services/data-api/generated-endpoints/) setup.
+* **A Google Cloud Platform (GCP) Account**: Necessary to access Google Cloud services, including Vertex AI and Secrets Manager. Following the link for [documentation](https://cloud.google.com/free/?utm_source=google&utm_medium=cpc&utm_campaign=japac-IN-all-en-dr-BKWS-all-cloud-trial-EXA-dr-1605216&utm_content=text-ad-none-none-DEV_c-CRE_634266354865-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt+-GCP-General-google+cloud-create+account-KWID_43700074200808440-aud-1596662389094:kwd-897396092360&userloc_1003697-network_g&utm_term=KW_gcp+account+creation&gad_source=1&gclid=CjwKCAjwwr6wBhBcEiwAfMEQs3kt6XJJHSQN7P7DA_KMp1ldoaQmhVsP3WAQuH7BzWgdaoffoJn2hRoCYl0QAvD_BwE&gclsrc=aw.ds&hl=en) setup.
 
 * **A MongoDB Atlas Account:** For hosting your MongoDB database. If you're new to MongoDB, sign up and create a cluster in MongoDB Atlas following MongoDB's [documentation](https://www.mongodb.com/docs/guides/atlas/cluster/)
 
