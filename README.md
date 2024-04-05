@@ -30,7 +30,7 @@ Before you start, make sure you have:
 # **Vertex Extensions SDK: Connecting Models to APIs**
 
 Vertex AI Extensions is a platform for creating and managing extensions that connect large language models to external systems via APIs. These external systems can provide LLMs with real-time data and perform data processing actions on their behalf.
-
+This tutorial uses the mongodb default dataset from sample_mflix database , movies collection.  We will run all the below code on the Enterprise Colab [notebook](https://github.com/mongodb-partners/MongoDB-VertexAI-extensions/blob/main/notebook/Mongodb%20vertex%20AI%20integration.ipynb).
 # Connect to project
 
 ```{python}
@@ -141,91 +141,8 @@ This approach ensures that sensitive information, like API keys, remains secure 
 The OpenAPI Specification (OAS) defines a standard, language-agnostic interface to RESTful APIs, allowing both humans and computers to understand the capabilities of a service without accessing its source code or documentation. An OpenAPI spec outlines the available endpoints in an API, how to access them, the expected request/response formats, and authentication methods.
 
 When creating an extension, you must provide an OpenAPI spec that describes how the extension interacts with the external service. This specification is typically hosted in a GCS bucket and referenced in the extension's manifest (open_api_gcs_uri).
-A sample open api spec file for mongodb data api is below.
-Complete file is availabe here
+Complete file is available [here](https://github.com/mongodb-partners/MongoDB-VertexAI-extensions/blob/main/open-api-spec/mdb-data-api.yaml)
 
-```{python}
-## sample yaml file for mongodb data API
-# openapi: "3.0.0"
-# info:
-#   version: 1.0.0
-#   title: MongoDB Data API Service
-#   description: Service to retrieve documents from MongoDB based on query parameters.
-# servers:
-#   - url: https://us-east-1.aws.data.mongodb-api.com/app/data-aaaa/endpoint/data/v1. ## Update your data api endpoint here
-# paths:
-#   /action/findOne:
-#     post:
-#       operationId: findone_mdb
-#       summary: Find a Document in MongoDB
-#       description: Retrieve a single document from a MongoDB collection using specified criteria.
-#       requestBody:
-#         description: JSON criteria for finding the document.
-#         required: true
-#         content:
-#           application/json:
-#             schema:
-#               type: object
-#               properties:
-#                 dataSource:
-#                   type: string
-#                   description: The data source.
-#                 database:
-#                   type: string
-#                   description: The database name.
-#                 collection:
-#                   type: string
-#                   description: The collection name.
-#                 filter:
-#                   type: object
-#                   description: A MongoDB query filter that matches documents.
-#       headers:
-#         api-key:
-#           description: API key for authentication.
-#           required: true
-#           schema:
-#             type: string
-#       responses:
-#         '200':
-#           description: Successful operation.
-#           content:
-#             application/json:
-#               schema:
-#                 type: object
-#         '400':
-#           description: Invalid request.
-#           content:
-#             application/json:
-#               example:
-#                 error: "Invalid request. Check the request body."
-#         '401':
-#           description: Unauthorized. Missing or invalid API key.
-#           content:
-#             application/json:
-#               example:
-#                 error: "Unauthorized. Missing or invalid API key."
-#         '404':
-#           description: Document not found.
-#           content:
-#             application/json:
-#               example:
-#                 error: "Document not found."
-#         '500':
-#           description: Internal Server Error.
-#           content:
-#             application/json:
-#               example:
-#                 error: "Internal Server Error. Please try again later."
-#       security:
-#           - api-key: []
-# components:
-#     securitySchemes:
-#       api-key:
-#         type: apiKey
-#         in: header
-#         name: api-key
-
-```
 
 ```{python}
 mdb_crud = llm_extension.Extension.create(
